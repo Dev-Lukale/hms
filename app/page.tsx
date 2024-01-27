@@ -1,54 +1,48 @@
-
-
-import LoginForm from "@/components/login/LoginForm";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
-import Image from "next/image";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import Navbar from "@/components/navbar/Navbar";
+import Link from "next/link";
 
 export default function Home() {
- 
-
   return (
-    <section className="h-screen font-poppins ">
-      <div className="relative z-10 flex justify-center h-screen py-7 lg:py-16 dark:bg-gray-800 2xl:py-44">
-        <div className="absolute top-0 bottom-0 left-0 w-full h-full bg-gray-50 dark:bg-gray-900 lg:bottom-0 lg:h-auto lg:w-full">
-          <div className="absolute inset-0 lg:bg-[#00000066] "></div>
-          <Image
-            src="https://images.pexels.com/photos/7321/sea-water-ocean-horizon.jpg?auto=compress&cs=tinysrgb&h=750&w=1260"
-            fill
-            alt=""
-            className="hidden object-cover w-full h-full lg:block"
-          />
-        </div>
-        <div className="flex items-center justify-center">
-          <div className="relative max-w-6xl px-4 mx-auto">
-            <div className="max-w-xl mx-auto lg:max-w-5xl">
-              <div className="flex flex-wrap items-center -mx-4">
-                <div className="hidden w-full px-6 mb-16 lg:w-3/5 lg:mb-0 lg:block">
-                  <h2 className="text-4xl font-bold leading-loose text-left text-gray-100 dark:text-gray-300 mb-9 lg:text-6xl ">
-                    Welcome and join our community
-                  </h2>
-                  <p className="text-lg text-left text-gray-200 dark:text-gray-300 ">
-                    You are welcome here!
-                  </p>
-                </div>
-                <div className="w-full px-4 lg:w-2/5">
-                  <div className="p-6 shadow-md lg:p-9 bg-gray-50 dark:bg-gray-900 ">
-                    <h2 className="mb-4 text-xl font-bold lg:mb-8 lg:text-3xl dark:text-gray-400">
-                      Login your account
-                    </h2>
-                  <LoginForm/>
-                  </div>
-                </div>
+    <div className="">
+      <Navbar />
+
+      <section className="py-12 bg-background sm:pb-16 lg:pb-20 xl:pb-24">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid items-center max-w-5xl grid-cols-1 mx-auto gap-y-8 lg:grid-cols-5 gap-x-16">
+            <div className="max-w-md mx-auto text-center lg:max-w-none lg:col-span-3">
+              <h1 className="text-4xl font-normal text-primary uppercase sm:text-5xl lg:text-6xl xl:text-8xl">
+                Get goods
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">
+                  delivered
+                </span>
+              </h1>
+              <p className="mt-6 text-lg font-normal text-secondary-foreground/70 sm:text-xl">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+                Exercitation veniam.
+              </p>
+              <div className="mt-8 sm:mt-10">
+                <Link
+                  href="/login"
+                  title=""
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-normal text-secondary rounded-sm bg-primary "
+                >
+                  Login Now
+                </Link>
               </div>
+            </div>
+
+            <div className="lg:col-span-2 lg:order-first">
+              <img
+                className="w-full max-w-sm mx-auto"
+                src="https://landingfoliocom.imgix.net/store/collection/dusk/images/hero/3/iphone-mockup.png"
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

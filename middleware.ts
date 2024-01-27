@@ -1,5 +1,3 @@
-//Server Components only have read access to cookies. This Middleware example can be used to refresh expired sessions before loading Server Component routes.
-
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
