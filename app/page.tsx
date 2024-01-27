@@ -1,14 +1,15 @@
 import Navbar from "@/components/navbar/Navbar";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className=" h-screen flex flex-col items-center justify-start container  ">
       <Navbar />
 
-      <section className="py-12 bg-background sm:pb-16 lg:pb-20 xl:pb-24">
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid items-center max-w-5xl grid-cols-1 mx-auto gap-y-8 lg:grid-cols-5 gap-x-16">
+      <section className="py-12 sm:pb-16 lg:pb-20 xl:pb-24 w-ful">
+        <div className=" mx-auto">
+          <div className="grid items-center  grid-cols-1 mx-auto gap-y-8 lg:grid-cols-5 gap-x-16">
             <div className="max-w-md mx-auto text-center lg:max-w-none lg:col-span-3">
               <h1 className="text-4xl font-normal text-primary uppercase sm:text-5xl lg:text-6xl xl:text-8xl">
                 Get goods
@@ -34,10 +35,12 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-2 lg:order-first">
-              <img
+              <Image
                 className="w-full max-w-sm mx-auto"
-                src="https://landingfoliocom.imgix.net/store/collection/dusk/images/hero/3/iphone-mockup.png"
-                alt=""
+                src="/landing-page.jpg"
+                alt="landing page banner"
+                height={800}
+                width={800}
               />
             </div>
           </div>

@@ -5,27 +5,26 @@ import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/actions";
 
-export async function login(formData: FormData) {
+export async function signin(values: { email: string; password: string }) {
   const cookieStore = cookies();
   const supabase = createClient(cookieStore);
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
-  const data = {
-    email: formData.get("email") as string,
-    password: formData.get("password") as string,
-  };
+  // const data = {
+  //   email: formData.get("email") as string,
+  //   password: formData.get("password") as string,
+  // };
 
-  const { error } = await supabase.auth.signInWithPassword(data);
+  const { error } = await supabase.auth.signInWithPassword(values);
 
-  if (error) {
-    return redirect("/login?message=Could not authenticate user");
+  if (error ) {
+    return { loginError: error };
   }
 
-//   revalidatePath("/dashboard");
+  //   revalidatePath("/dashboard");
   return redirect("/dashboard");
 }
-
 
 export async function signout(formData: FormData) {
   const cookieStore = cookies();
