@@ -1,11 +1,11 @@
 import { createClient } from "@/lib/supabase/server";
-import Logout from "../../(auth)/_components/Logout";
+
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 type LoginProps = {};
 
-const Login = async (props: LoginProps) => {
+const Dashboard = async (props: LoginProps) => {
   const cookieStore = cookies();
   const supabase = await createClient(cookieStore);
 
@@ -14,12 +14,7 @@ const Login = async (props: LoginProps) => {
     redirect("/");
   }
 
-  return (
-    <div>
-      <p className="text-primary">Hello {data.user.email}</p>
-      <Logout />
-    </div>
-  );
+  return <div>Dashboard</div>;
 };
 
-export default Login;
+export default Dashboard;
